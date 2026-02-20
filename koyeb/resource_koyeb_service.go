@@ -603,7 +603,7 @@ func autoScalingTargetSchema() *schema.Resource {
 			"sleep_idle_delay": {
 				Type:        schema.TypeSet,
 				Optional:    true,
-				Description: "The delay in seconds after which a service that received no requests is scaled to zero",
+				Description: "The delay in seconds after which a service that has received no requests is scaled to zero. Required when min is set to 0 (scale-to-zero).",
 				Elem:        autoScalingTargetValueSchema(),
 				Set:         schema.HashResource(autoScalingTargetValueSchema()),
 			},
